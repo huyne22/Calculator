@@ -56,21 +56,21 @@ namespace CalculatorTester
         }
 
         //Liên kết file csv đến project
-        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", @".\Data\TestData.csv", "TestData#csv", DataAccessMethod.Sequential)]
-        //[TestMethod]
-        //public void TestWithDataSource()
-        //{
-        //    int a,b,expected,actual;
-        //    string operation;
-        //    a = int.Parse(TestContext.DataRow[0].ToString());
-        //    b = int.Parse(TestContext.DataRow[1].ToString());
-        //    operation = TestContext.DataRow[2].ToString();
-        //    operation = operation.Remove(0, 1);
-        //    expected = int.Parse(TestContext.DataRow[3].ToString());
-        //    Calculation c = new Calculation(a, b);
-        //    actual = c.Exectute(operation);
-        //    Assert.AreEqual(expected, actual);
-        //}
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", @".\Data\TestData.csv", "TestData#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void TestWithDataSource()
+        {
+            int a, b, expected, actual;
+            string operation;
+            a = int.Parse(TestContext.DataRow[0].ToString());
+            b = int.Parse(TestContext.DataRow[1].ToString());
+            operation = TestContext.DataRow[2].ToString();
+            operation = operation.Remove(0, 1);
+            expected = int.Parse(TestContext.DataRow[3].ToString());
+            Calculation c = new Calculation(a, b);
+            actual = c.Exectute(operation);
+            Assert.AreEqual(expected, actual);
+        }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", @".\Data\TestDataPower.csv", "TestDataPower#csv", DataAccessMethod.Sequential)]
         [TestMethod]
