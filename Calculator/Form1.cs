@@ -26,5 +26,15 @@ namespace Calculator
             kq = c.Exectute("+");
             txtKQ.Text = kq.ToString();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int n;
+            double x,kq;
+            x = double.Parse(txtSo1.Text);
+            n = int.Parse(txtSo2.Text);
+            kq = Calculation.Power(x, n);
+            txtKQ.Text = kq.ToString();
+        }
     }
 }
